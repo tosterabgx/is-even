@@ -3,28 +3,28 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [result, setResult] = useState("Not a number");
+  const [result, setResult] = useState(false);
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
     const inputData = e.target.value;
-    const lastDigit = inputData.slice(-1);
-
-    let res = "";
-
-    if (isNaN(+inputData) || inputData.length == 0) {
-      res = "Not a number";
-    } else {
-      res = +lastDigit % 2 == 0 ? "Even" : "Odd";
-    }
+    const res =
+      inputData.length != 0 &&
+      !isNaN(+inputData) &&
+      +inputData.slice(-1) % 2 == 0;
 
     setResult(res);
   }
 
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-center gap-5 bg-linear-to-bl from-violet-500 to-fuchsia-500 text-gray-900">
-      <h1 className="text-4xl font-bold">Is Number Even?</h1>
-
-      <span>{result}</span>
+    <main className="flex h-screen w-screen flex-col items-center justify-center gap-13 bg-linear-to-bl from-purple-800 to-violet-800 text-white">
+      <div className="flex flex-col items-center gap-5">
+        <h1 className="text-5xl font-extrabold">Is Number Even?</h1>
+        {result ? (
+          <span className="text-2xl font-semibold text-green-400">Yes</span>
+        ) : (
+          <span className="text-2xl font-semibold text-red-400">No</span>
+        )}
+      </div>
 
       <input
         className="rounded-3xl border border-white/40 bg-white/20 p-5 backdrop-blur-md focus:outline-0"
@@ -34,7 +34,10 @@ export default function Home() {
         onChange={handleInput}
       />
 
-      <p>api: https://tosterabgx.me/is-even/api/:number</p>
+      <span>
+        API for developers:
+        <pre>https://tosterabgx.me/api/:number</pre>
+      </span>
     </main>
   );
 }
