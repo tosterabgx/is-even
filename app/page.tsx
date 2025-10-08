@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Home() {
   const [result, setResult] = useState(false);
@@ -9,8 +9,8 @@ export default function Home() {
     const inputData = e.target.value;
     const res =
       inputData.length != 0 &&
-      !inputData.includes(".") &&
-      !inputData.includes("e") &&
+      !inputData.includes('.') &&
+      !inputData.includes('e') &&
       !isNaN(+inputData) &&
       +inputData.slice(-1) % 2 == 0;
 
@@ -38,7 +38,7 @@ export default function Home() {
 
       <span>
         API for developers:
-        <pre>https://tosterabgx.me/api/:number</pre>
+        <code>https://tosterabgx.me/api/check-even/:number</code>
       </span>
     </main>
   );

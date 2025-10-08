@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Rubik } from 'next/font/google';
+import './globals.css';
 
 const rubik = Rubik({
-  subsets: ["latin"],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Is It Even Number?",
-  description: "Check if something is an even number or not!",
+  title: 'Is It Even Number?',
+  description: 'Check if something is an even number or not!',
 };
 
 export default function RootLayout({
