@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { Rubik } from "next/font/google";
 import "./globals.css";
+
+const rubik = Rubik({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Is even?",
@@ -12,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={rubik.className}>
       <body>{children}</body>
     </html>
   );
