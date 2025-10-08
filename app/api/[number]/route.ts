@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server';
  
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ number: number }> },
+  { params }: { params: Promise<{ number: string }> },
 ) {
   const checkNumber = +(await params).number;
 
