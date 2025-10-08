@@ -1,6 +1,6 @@
 # Is It Even Number?
 
-### Check it out <a href="https://www.tosterabgx.me" target="_blank">here</a>
+### Check it out [here](https://tosterabgx.me)
 
 Have you ever wondered if something is an even number? Now you can know it!
 
