@@ -1,15 +1,17 @@
 import { notFound } from 'next/navigation';
 import { NextRequest } from 'next/server';
  
+function check(value: string) {  
+  return value.length != 0 && !isNaN(+value) && +value.slice(-1) % 2 == 0;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ number: string }> },
 ) {
-  const checkNumber = +(await params).number;
+  const value = (await params).number;
 
-  if (isNaN(checkNumber)) {notFound()}
-
-  return new Response(JSON.stringify({ isEven: checkNumber % 2 == 0 }), {
+  return new Response(JSON.stringify({ isEven: check(value) }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
   });
