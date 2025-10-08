@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import { NextRequest } from 'next/server';
  
 function check(value: string) {  

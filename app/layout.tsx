@@ -7,7 +7,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "Is even?",
+  title: "Is It Even Number?",
   description: "Check if the number is even",
 };
 
