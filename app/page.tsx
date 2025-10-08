@@ -9,6 +9,8 @@ export default function Home() {
     const inputData = e.target.value;
     const res =
       inputData.length != 0 &&
+      !inputData.includes(".") &&
+      !inputData.includes("e") &&
       !isNaN(+inputData) &&
       +inputData.slice(-1) % 2 == 0;
 
@@ -18,7 +20,7 @@ export default function Home() {
   return (
     <main className="flex h-screen w-screen flex-col items-center justify-center gap-13 bg-linear-to-bl from-purple-800 to-violet-800 text-white">
       <div className="flex flex-col items-center gap-5">
-        <h1 className="text-5xl font-extrabold">Is Number Even?</h1>
+        <h1 className="text-5xl font-extrabold">Is It Even Number?</h1>
         {result ? (
           <span className="text-2xl font-semibold text-green-400">Yes</span>
         ) : (

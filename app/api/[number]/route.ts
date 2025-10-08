@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { NextRequest } from 'next/server';
  
 function check(value: string) {  
-  return value.length != 0 && !isNaN(+value) && +value.slice(-1) % 2 == 0;
+  return value.length != 0 && !value.includes(".") && !value.includes("e") && !isNaN(+value) && +value.slice(-1) % 2 == 0;
 }
 
 export async function GET(
