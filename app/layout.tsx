@@ -8,7 +8,7 @@ const rubik = Rubik({
 
 export const metadata: Metadata = {
   title: "Is It Even Number?",
-  description: "Check if the number is even",
+  description: "Check if something is an even number or not!",
 };
 
 export default function RootLayout({
